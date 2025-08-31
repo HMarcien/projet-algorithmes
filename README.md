@@ -2,9 +2,10 @@
 
 Ce dépôt est un projet d'étude personnel visant à explorer et implémenter une liste complète d'algorithmes, allant des structures de données fondamentales aux concepts de systèmes distribués.
 
-L'objectif est double :
-1.  **Approfondir la compréhension** des algorithmes et des structures de données.
-2.  **Mettre en pratique l'implémentation** dans plusieurs langages : **Gerbil Scheme**, **Python** et **Java**.
+L'objectif de ce projet est triple :
+1. **Explorer les algorithmes en profondeur**, avec un accent particulier sur leur conception **purement fonctionnelle**.
+2. **Développer des implémentations idiomatiques en Gerbil Scheme**, en s'appuyant sur les principes d'immutabilité et de non-mutation.
+3. **Comparer systématiquement** ces solutions fonctionnelles avec des implémentations équivalentes en **Python** et **Java** afin de contraster les paradigmes.
 
 ## Méthodologie
 
