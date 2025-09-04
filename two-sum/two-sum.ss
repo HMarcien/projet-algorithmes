@@ -4,13 +4,11 @@
 ;;; Implémentation de l'algorithme "Two Sum".
 
 (import :std/sugar
-        :std/misc/vector
-        :std/iter
         :std/test)
 
 ;;; two-sum-impure: vector(integer), integer  -> list(integer)
 ;;; Trouve les indices en utilisant une table de hachage immuable
-(def two-sum-impure-v2
+(def two-sum-impure
   (lambda ((array : :vector) (target : :integer)) => :list
      (let loop ((idx 0)
                 (seen (hash)))
@@ -24,6 +22,18 @@
                  (hash-put! seen current idx)
                  (loop (1+ idx) seen))))))))
 
+;;; two-sum-pure: vector(integer), integer  -> list(integer)
+;;; Trouve les indices en utilisant une liste d'association
+(def two-sum-pure
+  (lambda ((array : :vector) (target : :integer)) => :list
+     (let loop ((idx 0) (seen []))
+       (if (= idx (vector-length array)) []
+           (let* ((current (vector-ref array idx))
+                  (cplm (- target current))
+                  (found-idx (assget cplm seen)))
+             (match found-idx
+               ([found] [found idx])
+               (else (loop (1+ idx) (cons [current idx] seen)))))))))
 
 (test-suite "Two sum"
   (test-case "Pure"
